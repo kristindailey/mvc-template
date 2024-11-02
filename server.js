@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
+const editRoutes = require("./routes/edit");
 
 // Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Set routes
 app.use("/", mainRoutes);
+app.use("/edit", editRoutes);
 
 // Server running
 app.listen(process.env.PORT, () => {
