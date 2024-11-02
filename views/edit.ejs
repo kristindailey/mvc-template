@@ -12,7 +12,7 @@
             <section>
                 <ul>
                     <% items.forEach(item => { %>
-                        <% if (item._id === idItem) { %>
+                        <% if (item._id == idItem) { %>
                         <li>
                             <form action="/edit/update/<%= item._id%>" method="POST">
                                 <label for="textInput">Input Text</label>
@@ -28,7 +28,8 @@
                             <div><%= item.textInput %></div>
                             <div><%= item.numInput %></div>
                             <a href="/edit/<%= item._id %>">Edit</a>
-                            <a href="/edit/remove/<% item._id %>">Remove</a>
+                            <a href="/">Cancel</a>
+                            <!-- <a href="/edit/remove/<%= item._id %>">Cancel</a> -->
                         </li>
                         <% } %>
                     <% }) %>
