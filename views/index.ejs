@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MVC Template</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>This is the home page!</h1>
+        <form action="/new" method="POST">
+            <label for="textInput">Input Text</label>
+            <input type="text" name="textInput">
+            <label for="numInput">Input Number</label>
+            <input type="number" name="numInput" value=0>
+            <button type="submit">Add Item</button>
+        </form>
+
+        <ul>
+            <% items.forEach(item => { %>
+                <li>
+                    <div><%= item.textInput %></div>
+                    <div><%= item.numInput %></div>
+                    <a href="">Edit</a>
+                    <a href="">Remove</a>
+                </li>
+            <% }) %>
+        </ul>
+    </body>
+</html>
